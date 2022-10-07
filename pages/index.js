@@ -23,7 +23,11 @@ export default function Home() {
           </header>
           {Data.sections.map((section, idx) => (
             <div key={idx + section.name} className=''>
-              <header className={section.highlighted ? "bg-black text-white py-5 ml-[-32px]" : "border-t-2 border-black border-b-2 py-5"}>
+              <header
+                className={
+                  section.highlighted ? "bg-black text-white py-3 ml-[-32px] border-t-2 border-black border-b-2" : "border-t-2 border-black border-b-2 py-3"
+                }
+              >
                 <h2 className={section.highlighted ? "font-bold text-2xl tracking-tight ml-8" : "font-bold text-2xl tracking-tight"}>{section.name}</h2>{" "}
               </header>
 
@@ -43,7 +47,7 @@ export default function Home() {
             </div>
           ))}
           <div>
-            <header className='border-t-2 border-black border-b-2 py-5'>
+            <header className='border-t-2 border-black border-b-2 py-3'>
               <h2 className='font-bold text-2xl tracking-tight'>Bebidas</h2>
             </header>
             <div className='py-2 w-full flex flex-wrap justify-between '>
