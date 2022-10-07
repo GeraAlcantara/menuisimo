@@ -15,10 +15,12 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main>
-        <header className='py-4 mb-4 flex justify-center items-center'>
-          <h1 className='text-[12rem] md:text-[20rem] text-center w-[3ch] leading-[0.8] uppercase tracking-tight break-words font-serif '>Menu</h1>
-        </header>
-        <section>
+        <section className='grid grid-cols-1 md:grid-cols-2 gap-6 pt-10'>
+          <header className='mb-4 flex justify-center items-center'>
+            <h1 className='text-[12rem] md:text-[16rem] lg:text-[20rem] text-center w-[3ch] leading-[0.8] relative top-0 uppercase tracking-tight break-words font-serif '>
+              Menu
+            </h1>
+          </header>
           {Data.sections.map((section, idx) => (
             <div key={idx + section.name} className=''>
               <header className={section.highlighted ? "bg-black text-white py-5 ml-[-32px]" : "border-t-2 border-black border-b-2 py-5"}>
@@ -44,9 +46,9 @@ export default function Home() {
             <header className='border-t-2 border-black border-b-2 py-5'>
               <h2 className='font-bold text-2xl tracking-tight'>Bebidas</h2>
             </header>
-            <div className='py-2'>
+            <div className='py-2 w-full flex flex-wrap justify-between '>
               {Data.drinks.map((drink, idx) => (
-                <div key={drink.name + idx} className='w-full flex justify-between my-4'>
+                <div key={drink.name + idx} className='w-2/5 flex justify-between my-4'>
                   <div className='w-10/12'>
                     <h3 className='text-lg font-bold'>{drink.name}</h3>
                   </div>
@@ -59,7 +61,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className='flex flex-col items-center md:items-start md:flex-row md:justify-between py-4 border-t-2 border-black mt-4'>
+      <footer className='flex flex-col items-center md:items-start md:flex-row md:justify-between pt-4 pb-10 border-t-2 border-black mt-4'>
         <h3 className='mb-2 md:mb-0 font-serif text-2xl md:text-2xl'>{Data.restName}</h3>
         <p className='text-center md:text-left mb-2 md:mb-0'>{Data.address} </p>
         <i className='mb-2 md:mb-0'>{`Telefono: ${Data.phone}`}</i>
