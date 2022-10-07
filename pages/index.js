@@ -1,9 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import Footer from "../src/components/Footer";
-import Header from "../src/components/Header";
-import Menu from "../src/components/Menu";
 import { Data } from "../src/data/dataexample";
 
 export default function Home() {
@@ -21,7 +18,8 @@ export default function Home() {
               Menu
             </h1>
           </header>
-          {Data.sections.map((section, idx) => (
+
+          {Data.menu.sections.map((section, idx) => (
             <div key={idx + section.name} className=''>
               <header
                 className={
@@ -50,9 +48,9 @@ export default function Home() {
             <header className='border-t-2 border-black border-b-2 py-3'>
               <h2 className='font-bold text-2xl tracking-tight'>Bebidas</h2>
             </header>
-            <div className='py-2 w-full flex flex-wrap justify-between '>
-              {Data.drinks.map((drink, idx) => (
-                <div key={drink.name + idx} className='w-2/5 flex justify-between my-4'>
+            <div className='py-2 w-full justify-between '>
+              {Data.menu.drinks.map((drink, idx) => (
+                <div key={drink.name + idx} className='flex justify-between my-1'>
                   <div className='w-10/12'>
                     <h3 className='text-lg font-bold'>{drink.name}</h3>
                   </div>
